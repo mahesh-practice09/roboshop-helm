@@ -1,0 +1,6 @@
+---
+ apiVersion: v2 
+ name: mongodb
+ version: 0.0.1
+ appVersion: "mahesh050917/mongodb:1.0.0"
+ description: "installing mongodb"

@@ -1,0 +1,5 @@
+deployment:
+   replicas: "1"
+   changeCause: "changing version to mongodb"
+   image: "mahesh050917/mongodb"
+   imageVersion : "1.0.0"
