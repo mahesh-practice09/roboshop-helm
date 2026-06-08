@@ -2,5 +2,5 @@
  apiVersion: v2 
  name: catalogue
  version: 0.0.1
- appVersion: "mahesh050917/catalogue:1.4.0"
+ appVersion: "mahesh050917/catalogue:1.0.0"
  description: "installing catalogue"
