@@ -10,7 +10,7 @@ metadata:
     tier: backend
     component: catalogue 
 spec:
-  replicas:  {{ .Values.deployemnt.replicas }}
+  replicas:  {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
        project: roboshop 
@@ -25,7 +25,7 @@ spec:
      spec:
        containers:
          - name: catalogue
-           image: {{ .Values.deployemnt.image }}:{{ .Values.deployment.imageVersion }}
+           image: {{ .Values.deployment.image }}:{{ .Values.deployment.imageVersion }}
            imagePullPolicy: Always
            envFrom: 
             - configMapRef:
