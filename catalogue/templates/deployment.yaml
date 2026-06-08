@@ -1,0 +1,50 @@
+---
+
+apiVersion: apps/v1 
+kind: Deployment
+metadata: 
+  name: catalogue
+  namespace: roboshop
+  labels:
+    project: roboshop 
+    tier: backend
+    component: catalogue 
+spec:
+  replicas:  {{ .Values.deployemnt.replicas }}
+  selector:
+    matchLabels:
+       project: roboshop 
+       tier: backend
+       component: catalogue
+  template:
+     metadata:
+       labels: 
+           project: roboshop 
+           tier: backend
+           component: catalogue
+     spec:
+       containers:
+         - name: catalogue
+           image: {{ .Values.deployemnt.image }}:{{ .Values.deployment.imageVersion }}
+           imagePullPolicy: Always
+           envFrom: 
+            - configMapRef:
+                name: catalogue
+           resources:
+              requests:
+               cpu: 100m
+               memory: "64Mi"
+              limits:
+                cpu: 200m
+                memory: "128Mi"
+           readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+           livenessProbe:
+             httpGet: 
+              path: /health
+              port: 8080
+             failureThreshold: 2
+             periodSeconds: 10
