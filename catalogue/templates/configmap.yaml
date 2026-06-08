@@ -9,4 +9,4 @@
     component: catalogue
  data:
     MONGO: "true"
-    MONGO_URL: {{ .Values.configMap.mongourl }}
+    MONGO_URL: "{{ .Values.configMap.mongourl }}"
