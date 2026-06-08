@@ -3,3 +3,5 @@ deployment:
    changeCause: "changing version to catalogue"
    image: "mahesh050917/catalogue"
    imageVersion : "1.4.0"
+configMap:
+   mongourl: "mongodb://mongodb:27017/catalogue"
