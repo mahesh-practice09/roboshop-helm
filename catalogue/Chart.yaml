@@ -1,6 +1,6 @@
 ---
  apiVersion: v2 
- name: mongodb
+ name: catalogue
  version: 0.0.1
- appVersion: "mahesh050917/mongodb:1.0.0"
- description: "installing mongodb"
+ appVersion: "mahesh050917/catalogue:1.4.0"
+ description: "installing catalogue"
